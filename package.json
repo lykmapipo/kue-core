@@ -1,0 +1,32 @@
+{
+    "name": "kue-core",
+    "version": "0.1.0",
+    "description": "kue HTTP layer",
+    "main": "index.js",
+    "scripts": {
+        "test": "grunt test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lykmapipo/kue-core.git"
+    },
+    "keywords": [
+        "kue",
+        "queue",
+        "que",
+        "q",
+        "job",
+        "worker",
+        "redis"
+    ],
+    "author": "lykmapipo",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lykmapipo/kue-core/issues"
+    },
+    "homepage": "https://github.com/lykmapipo/kue-core",
+    "contributors": [{
+        "name": "lykmapipo",
+        "github": "https://github.com/lykmapipo"
+    }]
+}
