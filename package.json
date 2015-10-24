@@ -29,6 +29,13 @@
         "name": "lykmapipo",
         "github": "https://github.com/lykmapipo"
     }],
+    "dependencies": {
+        "lodash": "^3.10.1",
+        "lodash-deep": "^1.6.0",
+        "node-redis-warlock": "^0.1.4",
+        "redis": "^2.2.5",
+        "reds": "^0.2.5"
+    },
     "devDependencies": {
         "chai": "^3.4.0",
         "grunt": "^0.4.5",
