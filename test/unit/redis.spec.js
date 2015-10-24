@@ -3,7 +3,7 @@
 //dependencies
 var expect = require('chai').expect;
 var path = require('path');
-var queue = require('events').EventEmitter();
+var queue = require('events').EventEmitter;
 var redis = require(path.join(__dirname, '..', '..', 'lib', 'redis'));
 
 describe('redis', function() {
@@ -29,6 +29,7 @@ describe('redis', function() {
     });
 
     it('should be able to configure redis connection factory', function(done) {
+        //TODO adding more client factory scenarios
 
         expect(redis.createClient).to.not.exist;
 
