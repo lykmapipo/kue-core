@@ -28,5 +28,13 @@
     "contributors": [{
         "name": "lykmapipo",
         "github": "https://github.com/lykmapipo"
-    }]
+    }],
+    "devDependencies": {
+        "chai": "^3.4.0",
+        "grunt": "^0.4.5",
+        "grunt-contrib-jshint": "^0.11.3",
+        "grunt-mocha-test": "^0.12.7",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "^2.3.3"
+    }
 }
