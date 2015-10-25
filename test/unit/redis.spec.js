@@ -8,7 +8,7 @@ var redis = require(path.join(__dirname, '..', '..', 'lib', 'redis'));
 
 describe('redis', function() {
 
-    it('should be able to export require redis utilities', function(done) {
+    it('should be able to export required redis utilities', function(done) {
 
         expect(redis.configureFactory).to.exist;
         expect(redis.configureFactory).to.be.a('function');
@@ -53,6 +53,42 @@ describe('redis', function() {
         expect(client.getKey).to.be.a('function');
         expect(client.getKey('kue')).to.be.equal('q:kue');
 
+        client.quit();
+
+        done();
+    });
+
+    it('should be able to return or recreate new redis client', function(done) {
+        expect(redis._client).to.be.null;
+
+        redis.client();
+        expect(redis._client).to.not.be.null;
+
+        done();
+    });
+
+    it('should be able to return or recreate new redis pubsub client', function(done) {
+        expect(redis._pubsub).to.be.null;
+
+        redis.pubsubClient();
+        expect(redis._pubsub).to.not.be.null;
+
+        done();
+    });
+
+    it('should be able to reset pubsub and normal redis clients', function(done) {
+        expect(redis._client).to.not.be.null;
+        expect(redis._pubsub).to.not.be.null;
+
+        redis.reset();
+        expect(redis._client).to.be.null;
+        expect(redis._pubsub).to.be.null;
+
+        done();
+    });
+
+    after(function(done) {
+        redis.reset();
         done();
     });
 
