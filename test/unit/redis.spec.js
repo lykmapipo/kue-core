@@ -6,7 +6,7 @@ var path = require('path');
 var queue = require('events').EventEmitter;
 var redis = require(path.join(__dirname, '..', '..', 'lib', 'redis'));
 
-describe('redis', function() {
+describe('redis utilities', function() {
 
     it('should be able to export required redis utilities', function(done) {
 
@@ -28,8 +28,25 @@ describe('redis', function() {
         done();
     });
 
+
+    it('should be able to create redis client', function(done) {
+
+        expect(redis.createClientFactory).to.exist;
+
+        var client = redis.createClientFactory({});
+
+        //assert client
+        expect(client).to.not.be.null;
+        expect(client.connectionOption).to.exist;
+        expect(client.connectionOption.port).to.be.equal(6379);
+        expect(client.connectionOption.host).to.be.equal('127.0.0.1');
+
+        client.quit();
+
+        done();
+    });
+
     it('should be able to configure redis connection factory', function(done) {
-        //TODO adding more client factory scenarios
 
         expect(redis.createClient).to.not.exist;
 
